@@ -1,7 +1,8 @@
 # local folder
 src/config
-node_modules
-teste/
+client/node_modules
+server/node_modules
+server/src/.env
 
 # local file
 package-lock.json
