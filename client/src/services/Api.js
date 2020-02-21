@@ -1,7 +1,8 @@
 import axios from 'axios'
 
-export default() => {
-  return axios.create({
-    baseURL: process.env.SERVER
-  })
+const Api = axios.create({
+  baseURL: "http://localhost:8081/api/",
+})
+export default {
+  Api  
 }

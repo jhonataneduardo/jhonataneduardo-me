@@ -1,7 +1,16 @@
-import Api from '@/services/Api'
+import axios from 'axios'
+
+const http = axios.create({
+  baseURL: "http://localhost:8081/api/",
+})
 
 export default {
-  fetchTest() {
-    return Api().get('test')
+  login:(user, pass) => {
+    return http.get('user/login', {
+      auth: {
+        username: user,
+        password: pass
+      }
+    })
   }
 }

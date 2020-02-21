@@ -1,5 +1,4 @@
 'use strict'
-/* eslint-disable */
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')

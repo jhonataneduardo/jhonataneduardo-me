@@ -17,6 +17,7 @@
         <md-field md-has-password>
           <label>Password</label>
           <md-input v-model="login.password" type="password"></md-input>
+          {{ login.email }}
         </md-field>
       </div>
 
@@ -35,6 +36,9 @@
 </template>
 
 <script>
+
+import User from '@/services/User'
+
 export default {
   name: 'Login',
   data() {
@@ -47,13 +51,14 @@ export default {
     };
   },
   methods: {
-    auth() {
-      // your code to login user
-      // this is only for example of loading
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 5000);
+    async auth() {
+
+      try {
+        const resposta = await User.login(this.login.email, this.login.password)
+        console.log(resposta)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }
